@@ -2,6 +2,8 @@ package com.example.myapplication
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
+import com.google.android.material.snackbar.Snackbar
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -20,4 +22,27 @@ class MainActivity : AppCompatActivity() {
         }
         Log.i(TAG, "onCreate: Method is called..")
     }
+
+//    override fun onResume() {
+//        super.onResume()
+//
+//        val text = "onResume function called."
+//        val duration = Toast.LENGTH_SHORT
+//
+//        val toast = Toast.makeText(this, text, duration)
+//        toast.show()
+//    }
+
+    override fun onResume() {
+        super.onResume()
+
+        Snackbar.make(
+            findViewById(R.id.main),
+            "onResume function called.",
+            Snackbar.LENGTH_SHORT
+        ).show()
+    }
+
+
+
 }
